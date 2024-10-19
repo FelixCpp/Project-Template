@@ -5,6 +5,7 @@ setlocal
 	:: .sln
 	:: .vcxproj
 	:: .vcxproj.filters
+	:: .vcxproj.user
 
 pushd %~dp0\..\
 
@@ -20,6 +21,11 @@ for /r %%i in (*.vcxproj) do (
 
 echo Deleting *.vcxproj.filters files ...
 for /r %%i in (*.vcxproj.filters) do (
+	del "%%i"
+)
+
+echo Deleting *.vcxproj.user files ...
+for /r %%i in (*.vcxproj.user) do (
 	del "%%i"
 )
 

@@ -6,7 +6,7 @@ set "PREMAKE_URL=https://github.com/premake/premake-core/releases/download/v%PRE
 set "PREMAKE_ZIP=premake-%PREMAKE_VERSION%-windows.zip"
 set "PREMAKE_EXE=premake-%PREMAKE_VERSION%.exe"
 set "PREMAKE_DIR=premake5"
-set "DOWNLOAD_DIR=%~dp0\..\tools"
+set "DOWNLOAD_DIR=%~dp0\..\Premake\bin"
 
 :: Check if premake5 is installed
 if exist "%DOWNLOAD_DIR%/%PREMAKE_EXE%" (
