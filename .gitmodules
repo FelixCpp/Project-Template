@@ -4,3 +4,6 @@
 [submodule "Vendor/googletest"]
 	path = Vendor/googletest
 	url = https://github.com/FelixCpp/googletest.git
+[submodule "Vendor/glfw"]
+	path = Vendor/glfw
+	url = https://github.com/FelixCpp/glfw.git

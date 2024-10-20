@@ -12,9 +12,11 @@ import <functional>;
 export namespace Core
 {
 	class Window;
+	class RenderTarget;
 
 	Window& GetWindow();
 	Sketch& GetSketch();
+	RenderTarget& GetRenderTarget();
 
 	int Launch(const std::function<std::unique_ptr<Sketch>()>& createSketch);
 }

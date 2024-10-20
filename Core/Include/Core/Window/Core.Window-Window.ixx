@@ -13,6 +13,7 @@ export namespace Core
 
 	class Window
 	{
+
 		template <typename... Handlers>
 		struct Overload : Handlers...
 		{
@@ -23,8 +24,11 @@ export namespace Core
 
 		struct Properties
 		{
-			Int2 Size;
+			Int2		Size;
 			std::string Title;
+
+			int32_t MajorVersion;
+			int32_t MinorVersion;
 		};
 
 		explicit Window(const Properties& properties);
@@ -38,6 +42,8 @@ export namespace Core
 
 		void SetTitle(const std::string& title);
 		std::string GetTitle() const;
+
+		void* GetWindowHandle() const;
 
 		template <typename... Handlers>
 		inline void HandleEvents(Handlers&&... handlers)

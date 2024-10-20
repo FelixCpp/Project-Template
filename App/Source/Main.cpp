@@ -17,7 +17,8 @@ public:
 
 	void OnDraw(const float deltaTime) override
 	{
-		std::cout << "Delta Time: " << deltaTime << std::endl;
+		Core::GetRenderTarget().Background(Core::Color(255, 0, 0));
+		
 	}
 
 	void OnDestroy() override
