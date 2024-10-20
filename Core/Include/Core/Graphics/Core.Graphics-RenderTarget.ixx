@@ -5,6 +5,8 @@
 
 export module Core.Graphics:RenderTarget;
 
+import Core.System;
+
 import :Color;
 
 export namespace Core
@@ -17,6 +19,8 @@ export namespace Core
 	public:
 
 		explicit RenderTarget(const Window& window);
+
+		void SetViewport(const Int2& size);
 
 		void Background(const Color& color);
 		void Present();

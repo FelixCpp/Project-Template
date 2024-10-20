@@ -70,7 +70,7 @@ namespace Core
 				},
 				[](const WindowEvents::Resize& event)
 				{
-
+					s_RenderTarget->SetViewport(Int2 { event.Width, event.Height });
 				}
 			);
 

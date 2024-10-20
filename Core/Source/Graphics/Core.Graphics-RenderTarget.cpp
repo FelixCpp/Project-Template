@@ -33,6 +33,11 @@ namespace Core
 		Logger::Get().Info("\tGLSL Version: {0}", std::bit_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
 	}
 
+	void RenderTarget::SetViewport(const Int2& size)
+	{
+		glViewport(0, 0, size.X, size.Y);
+	}
+
 	void RenderTarget::Background(const Color& color)
 	{
 		glClearColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);

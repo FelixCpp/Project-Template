@@ -9,7 +9,7 @@ public:
 	bool OnSetup() override
 	{
 		Core::GetWindow().SetSize(Core::Int2(900, 900));
-		Core::GetWindow().SetTitle("Minecraft 2.0");
+		Core::GetWindow().SetTitle("Core Window");
 
 		std::cout << "Hello, World!" << std::endl;
 		return true;
