@@ -1,6 +1,7 @@
 module;
 
 #include <chrono>
+#include <spdlog/spdlog.h>
 
 module Core.System;
 

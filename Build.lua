@@ -3,7 +3,8 @@ IncludeDirs = {
 	Glad = "%{wks.location}/Vendor/Glad/include",
 	GoogleTest = "%{wks.location}/Vendor/GoogleTest/googletest/include",
 	Gcem = "%{wks.location}/Vendor/Gcem/include",
-	GLFW = "%{wks.location}/Vendor/Glfw/include"
+	GLFW = "%{wks.location}/Vendor/Glfw/include",
+	Spdlog = "%{wks.location}/Vendor/Spdlog/include"
 }
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
@@ -18,6 +19,7 @@ workspace "Workspace"
 		include "Vendor/GoogleTest/Build-GoogleTest.lua"
 		include "Vendor/Gcem/Build-Gcem.lua"
 		include "Vendor/Glfw/Build-Glfw.lua"
+		include "Vendor/Spdlog/Build-Spdlog.lua"
 
 	group "Core"
 		include "Core/Build-Core.lua"

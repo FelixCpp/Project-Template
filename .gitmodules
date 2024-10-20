@@ -7,3 +7,6 @@
 [submodule "Vendor/glfw"]
 	path = Vendor/glfw
 	url = https://github.com/FelixCpp/glfw.git
+[submodule "Vendor/spdlog"]
+	path = Vendor/spdlog
+	url = https://github.com/FelixCpp/spdlog.git

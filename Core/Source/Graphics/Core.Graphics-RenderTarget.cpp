@@ -9,6 +9,7 @@ module;
 module Core.Graphics;
 
 import Core.Window;
+import Core.System;
 
 namespace Core
 {
@@ -21,8 +22,15 @@ namespace Core
 		glfwMakeContextCurrent(windowHandle);
 		if (not gladLoadGLLoader(std::bit_cast<GLADloadproc>(&glfwGetProcAddress)))
 		{
+			Logger::Get().Error("Failed to initialize GLAD");
 			throw std::runtime_error("Failed to initialize GLAD");
 		}
+
+		Logger::Get().Info("OpenGL Information:");
+		Logger::Get().Info("\tOpenGL Version: {0}", std::bit_cast<const char*>(glGetString(GL_VERSION)));
+		Logger::Get().Info("\tRenderer: {0}", std::bit_cast<const char*>(glGetString(GL_RENDERER)));
+		Logger::Get().Info("\tVendor: {0}", std::bit_cast<const char*>(glGetString(GL_VENDOR)));
+		Logger::Get().Info("\tGLSL Version: {0}", std::bit_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
 	}
 
 	void RenderTarget::Background(const Color& color)

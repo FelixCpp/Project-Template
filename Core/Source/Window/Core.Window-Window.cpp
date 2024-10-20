@@ -5,6 +5,8 @@ module;
 
 module Core.Window;
 
+import Core.System;
+
 namespace Core
 {
 	class Window::Impl
@@ -20,10 +22,14 @@ namespace Core
 		{
 			if (s_WindowCount == 0)
 			{
-				glfwSetErrorCallback(&GLFWErrorCallback);
+				glfwSetErrorCallback([](const int error, const char* description)
+				{
+					Logger::Get().Error("GLFW-Error ({0}): {1}", error, description);
+				});
 
 				if (not glfwInit())
 				{
+					Logger::Get().Error("Failed to initialize GLFW");
 					throw std::runtime_error("Failed to initialize GLFW");
 				}
 			}
@@ -56,6 +62,7 @@ namespace Core
 			m_Window = glfwCreateWindow(properties.Size.X, properties.Size.Y, properties.Title.c_str(), nullptr, nullptr);
 			if (m_Window == nullptr)
 			{
+				Logger::Get().Error("Failed to create GLFW window");
 				throw std::runtime_error("Failed to create GLFW window");
 			}
 
@@ -132,13 +139,6 @@ namespace Core
 		GLFWwindow* GetHandle() const
 		{
 			return m_Window;
-		}
-
-	private:
-
-		static void GLFWErrorCallback(const int error, const char* description)
-		{
-			printf("GLFW-Error (%d): %s", error, description);
 		}
 
 	private:
